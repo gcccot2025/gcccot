@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>III Reunião Nacional do GCCCOT</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f9f9f9 0%, #e6eef5 100%);
+            text-align: center;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #333;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 25px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+        }
+        
+        .header {
+            margin-bottom: 25px;
+        }
+        
+        /* Tive que adicionar um contaner para o binner  */
+        .banner-container {
+            width: 100%;
+            margin: 0 auto 25px;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        }
+        
+        .banner {
+            width: 100%;
+            height: auto;
+            max-height: 180px; /* Reduzi a altura máxima */
+            object-fit: cover;
+            display: block;
+        }
+        
+        .title {
+            color: #0055a5;
+            font-size: 22px;
+            font-weight: bold;
+            margin: 15px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .links {
+            margin: 30px 0;
+        }
+        
+        .link-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 18px auto;
+            padding: 14px 25px;
+            width: 100%;
+            max-width: 380px;
+            background: linear-gradient(to bottom, #0055a5 0%, #004080 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 17px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 85, 165, 0.25);
+            border: 1px solid #003d7a;
+        }
+        
+        .link-btn:hover {
+            background: linear-gradient(to bottom, #004080 0%, #003366 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 85, 165, 0.35);
+        }
+        
+        .link-btn:active {
+            transform: translateY(1px);
+        }
+        
+        .icon {
+            margin-right: 12px;
+            font-size: 20px;
+        }
+        
+        footer {
+            margin-top: 40px;
+            color: #666;
+            font-size: 14px;
+            padding: 15px;
+            width: 100%;
+            max-width: 950px;
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        @media (max-width: 650px) {
+            body {
+                padding: 15px;
+            }
+            
+            .container {
+                padding: 20px 15px;
+                border-radius: 10px;
+            }
+            
+            .banner {
+                max-height: 150px;
+            }
+            
+            .title {
+                font-size: 18px;
+            }
+            
+            .link-btn {
+                padding: 12px 20px;
+                font-size: 15px;
+                max-width: 320px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Verificação de autenticação -->
+    <script>
+        // Verificar se o usuário está autenticado
+        if (sessionStorage.getItem('autenticado') !== 'true') {
+            // Se não estiver autenticado, redirecionar para a página de login
+            window.location.href = 'login.html';
+        }
+        
+        // Opcional: Adicionar botão de logout
+        function logout() {
+            sessionStorage.removeItem('autenticado');
+            window.location.href = 'login.html';
+        }
+    </script>
+
+    <!-- Adicionei um Contaner para o fromulario estar dentro da area -->
+    <div class="container">
+        <div class="header">
+            <!-- Adicionei um container para o binner -->
+            <div class="banner-container">
+                <img src="banner1.png" alt="III Reunião Nacional do GCCCOT" class="banner">
+            </div>
+            
+            
+            <!-- Removi os titulos aqui -->
+        </div>
+        
+        <!-- Links -->
+        <div class="links">
+            <a href="https://drive.google.com/drive/folders/1jzcYbRbss8F-mY-UCQuE-CJntKCniIeM?usp=sharing" class="link-btn" target="_blank">
+                <span class="icon">📄</span> Programa
+            </a>
+            <a href="https://drive.google.com/drive/folders/1lGZk2T_K871i0bC4epPaSZ5ijoOe9LzQ?usp=sharing" class="link-btn" target="_blank">
+                <span class="icon">📊</span> Apresentações
+            </a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfV6P3uI-n_A6bNZsD1yDoZVRWURbmmRY0Ao_O8MOWYUrmCAQ/viewform?usp=sharing&ouid=103387441482730507510" class="link-btn" target="_blank">
+                <span class="icon">🖊️</span> Marcação de Presença
+            </a>
+            
+            <!-- Botão de logout (opcional)  se pretender podemos remover-->
+            <a href="#" onclick="logout(); return false;" class="link-btn" style="background: linear-gradient(to bottom, #d9534f 0%, #c9302c 100%); border-color: #ac2925;">
+                <span class="icon">🚪</span> Sair
+            </a>
+        </div>
+    </div>
+    
+    <!-- Rodapé -->
+    <footer>
+        &copy; 2025 - Departamento de Tecnologias de Informação e Comunicação – GCCCOT
+    </footer>
+</body>
+</html>
